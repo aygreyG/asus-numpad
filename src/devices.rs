@@ -47,7 +47,7 @@ pub(crate) fn read_proc_input() -> Result<(u32, u32, u32)> {
     for line in data.lines() {
         match touchpad_detection {
             Detection::NotDetected => {
-                if (line.contains("Name=\"ASUE") || line.contains("Name=\"ELAN"))
+                if (line.contains("Name=\"ASUE") || line.contains("Name=\"ELAN") || line.contains("Name=\"ASUP"))
                     && line.contains("Touchpad")
                 {
                     touchpad_detection = Detection::Parsing;
